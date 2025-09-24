@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Management System</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-clipboard-check"></i> Attendance Management System</h1>
+    </header>
+
+    <main>
+        <!-- Login Section -->
+        <section id="login-section">
+            <h2>Login</h2>
+            <div class="login-buttons">
+                <button id="admin-login"><i class="fas fa-user-shield"></i>Admin</button>
+                <button id="user-login"><i class="fas fa-user"></i>User</button>
+            </div>
+        </section>
+
+        <!-- Admin Module -->
+        <section id="admin-module" class="hidden">
+            <div class="module-header admin-header">
+                <i class="fas fa-user-shield"></i> Admin Module
+                <button class="logout-btn" id="logout-admin"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            <div id="student-management">
+                <h3><i class="fas fa-users"></i> Student Management</h3>
+
+                <form id="list-form" class="form-group">
+                    <input type="text" id="list-name" placeholder="List Name" required>
+                    <button type="submit"><i class="fas fa-plus"></i> Create List</button>
+                </form>
+
+                <div class="form-group">
+                    <select id="student-lists">
+                        <option value="">Select a student list</option>
+                    </select>
+                </div>
+
+                <form id="student-form" class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="class" placeholder="Class">
+                    <input type="text" id="roll_number" placeholder="Roll Number">
+                    <button type="submit"><i class="fas fa-user-plus"></i> Add Student</button>
+                </form>
+
+                <div class="student-list-container">
+                    <h4>Current Students</h4>
+                    <ul id="student-list"></ul>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="remove-student"><i class="fas fa-user-minus"></i> Remove Latest Student</button>
+                    <button id="remove-student-list"><i class="fas fa-trash"></i> Remove Student List</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="download-list">Select List to Download Report:</label>
+                    <select id="download-list">
+                        <option value="">Select List</option>
+                    </select>
+                    <button id="download-report-admin"><i class="fas fa-download"></i> Download Report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Module -->
+        <section id="user-module" class="hidden">
+            <div class="module-header user-header">
+                <i class="fas fa-user"></i> User Module
+                <button class="logout-btn" id="logout-user"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            <div id="attendance-module">
+                <h3><i class="fas fa-calendar-check"></i> Attendance Module</h3>
+
+                <div class="form-group">
+                    <label for="user-list">Select Student List:</label>
+                    <select id="user-list">
+                        <option value="">Select a student list</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="date" id="attendance-date" required>
+                </div>
+
+                <div class="attendance-list-container">
+                    <h4>Today's Attendance</h4>
+                    <ul id="attendance-list"></ul>
+                </div>
+
+                <button id="save-attendance"><i class="fas fa-save"></i> Save Attendance</button>
+
+                <div class="form-group">
+                    <label for="user-download-list">Select List to Download Report:</label>
+                    <select id="user-download-list">
+                        <option value="">Select List</option>
+                    </select>
+                    <button id="download-report-user"><i class="fas fa-download"></i> Download Report</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
